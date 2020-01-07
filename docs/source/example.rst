@@ -28,3 +28,5 @@ mvn生命周期的命令：
  #. mvn test：测试项目（运行测试类）
  #. mvn package：负责将我们的项目打包
  #. mvn install：将这个项目安装到仓库中
+
+ 
