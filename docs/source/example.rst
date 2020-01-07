@@ -29,4 +29,5 @@ mvn生命周期的命令：
  #. mvn package：负责将我们的项目打包
  #. mvn install：将这个项目安装到仓库中
 
- 
+修改密钥的权限：
+chmod 700 /home/Memir/.ssh/id_rsa
