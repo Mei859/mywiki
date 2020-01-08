@@ -85,6 +85,13 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">2020-01-07学习内容</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#sphinx">Sphinx</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#read-the-docs">部署到Read the Docs上</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#maven">Maven学习</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#nexus">Nexus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#aliyun">使用Aliyun国内镜像</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#git">Git</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#rpc">RPC</a></li>
 </ul>
 </li>
 </ul>
@@ -175,6 +182,59 @@
 <div class="section" id="read-the-docs">
 <h2>部署到Read the Docs上<a class="headerlink" href="#read-the-docs" title="永久链接至标题">¶</a></h2>
 <p><a class="reference external" href="https://readthedocs.org/projects/my-wiki-mei/">https://readthedocs.org/projects/my-wiki-mei/</a></p>
+</div>
+<div class="section" id="maven">
+<h2>Maven学习<a class="headerlink" href="#maven" title="永久链接至标题">¶</a></h2>
+<dl class="simple">
+<dt>mvn生命周期的命令：</dt><dd><ol class="arabic simple">
+<li><p>mvn clean：清理编译的项目</p></li>
+<li><p>mvn compile：编译项目</p></li>
+<li><p>mvn test：测试项目（运行测试类）</p></li>
+<li><p>mvn package：负责将我们的项目打包</p></li>
+<li><p>mvn install：将这个项目安装到仓库中</p></li>
+</ol>
+</dd>
+</dl>
+<p>修改密钥的权限：
+chmod 700 /home/Memir/.ssh/id_rsa</p>
+<dl class="simple">
+<dt>Maven使用多线程加速install:(进入有POM文件的Maven工程下面)</dt><dd><ol class="arabic simple">
+<li><p>mvn -T 4 clean install</p></li>
+<li><p>mvn -T 1C clean install</p></li>
+</ol>
+</dd>
+<dt>Maven install过程中跳过测试：</dt><dd><ol class="arabic simple">
+<li><p>mvn -T 4 clean install -DskipTests</p></li>
+<li><p>mvn -T 4 clean install -Dmaven.test.skip=true</p></li>
+</ol>
+</dd>
+</dl>
+</div>
+<div class="section" id="nexus">
+<h2>Nexus<a class="headerlink" href="#nexus" title="永久链接至标题">¶</a></h2>
+<p>搭建Nexus私服的目的：解决工作上组件之间的jar包依赖管理。</p>
+</div>
+<div class="section" id="aliyun">
+<h2>使用Aliyun国内镜像<a class="headerlink" href="#aliyun" title="永久链接至标题">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="o">&lt;</span><span class="n">mirrors</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">mirror</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nb">id</span><span class="o">&gt;</span><span class="n">alimaven</span><span class="o">&lt;/</span><span class="nb">id</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">name</span><span class="o">&gt;</span><span class="n">aliyun</span> <span class="n">maven</span><span class="o">&lt;/</span><span class="n">name</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">url</span><span class="o">&gt;</span>
+            <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">maven</span><span class="o">.</span><span class="n">aliyun</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">nexus</span><span class="o">/</span><span class="n">content</span><span class="o">/</span><span class="n">groups</span><span class="o">/</span><span class="n">public</span><span class="o">/</span>
+        <span class="o">&lt;/</span><span class="n">url</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">mirrorOf</span><span class="o">&gt;</span><span class="n">central</span><span class="o">&lt;/</span><span class="n">mirrorOf</span><span class="o">&gt;</span>
+    <span class="o">&lt;/</span><span class="n">mirror</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">mirrors</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="git">
+<h1>Git<a class="headerlink" href="#git" title="永久链接至标题">¶</a></h1>
+<div class="section" id="rpc">
+<h2>RPC<a class="headerlink" href="#rpc" title="永久链接至标题">¶</a></h2>
+<p>RPC(Remote Procedure Call)远程过程调用，也就是一个节点请求另一个节点提供的服务。</p>
 </div>
 </div>
 
